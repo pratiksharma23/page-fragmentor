@@ -1,4 +1,8 @@
-it('generates footers', async () => {
+it.jestPlaywrightSkip(
+  {
+    browsers: ['chromium', 'firefox'],
+  },
+  'footers', async () => {
   await page.goto('http://localhost:1234/footers.html', { waitUntil: 'load' });
 
   // Safari handles white space differently

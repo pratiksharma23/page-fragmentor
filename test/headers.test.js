@@ -1,4 +1,8 @@
-it('generates headers', async () => {
+it.jestPlaywrightSkip(
+  {
+    browsers: ['chromium', 'firefox'],
+  },
+  'headers', async () => {
   await page.goto('http://localhost:1234/headers.html', { waitUntil: 'load' });
 
   // Safari handles white space differently
